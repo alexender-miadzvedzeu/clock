@@ -7,13 +7,16 @@
 .clock {
     width: 150px;
     height: 150px;
-    border: 1px solid red;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 30vh auto 0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('./cl-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #secondsArrow {
@@ -22,8 +25,7 @@
     width: 10px;
     border-radius: 50%;
     background: red;
-    animation: sec;
-    animation-duration: 1s;
+    transition: all 1s;
 }
 
 #secondsArrow::before {
@@ -50,7 +52,80 @@
     border: 1px solid red;
 }
 
-@keyframes sec {
-    0% {transform: rotate(0deg)}
-    100% {transform: rotate(360deg)}
+
+#minutesArrow {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+#minutesArrow::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    height: 8px;
+    width: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+#minutesArrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 2px;
+    height: 50px;
+    width: 2px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+#minutesArrow,
+#minutesArrow::before,
+#minutesArrow::after {
+    border: 1px solid #000;
+    background: #000;
+}
+
+
+#hourArrow {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+#hourArrow::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    height: 6px;
+    width: 3px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#hourArrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 2px;
+    height: 40px;
+    width: 3px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+#hourArrow,
+#hourArrow::before,
+#hourArrow::after {
+    border: 1px solid #000;
+    background: #000;
 }
